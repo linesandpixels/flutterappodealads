@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -24,35 +26,81 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      platformVersion = await Flutterappodealads.platformVersion;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
+      List<AppodealAdType> types = new List<AppodealAdType>();
+      types.add(AppodealAdType.AppodealAdTypeInterstitial);
+      types.add(AppodealAdType.AppodealAdTypeRewardedVideo);
+      /*Flutterappodealads.instance.videoListener =
+          (RewardedVideoAdEvent event, {String rewardType, int rewardAmount}) {
+        print("RewardedVideoAd event $event");
+        setState(() {
+          videoState = "State $event";
+        });
+      };*/
+      // You should use here your APP Key from Appodeal
+      await Flutterappodealads.instance
+          .initialize(Platform.isIOS ? 'IOSAPPKEY' : 'ANDROIDAPPKEY', types, false);
+    } on PlatformException {}
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
     if (!mounted) return;
 
-    setState(() {
-      _platformVersion = platformVersion;
-    });
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
-        ),
+    return new MaterialApp(
+        home: new Scaffold(
+      appBar: new AppBar(
+        title: new Text('Flutter Appodeal Ads'),
       ),
-    );
+      body: new Padding(
+        padding: new EdgeInsets.only(top: 40.0),
+        child: new Center(
+            child: new Column(children: <Widget>[
+          /*new Container(
+              height: 100.0,
+              color: Colors.green,
+              child: new FlatButton(
+                onPressed: () {
+                  this.loadRewarded();
+                },
+                child: new Text('Show Rewarded'),
+              )),*/
+          new Container(
+              height: 100.0,
+              color: Colors.blue,
+              child: new FlatButton(
+                onPressed: () {
+                  this.loadInterstital();
+                },
+                child: new Text('Show Interstitial'),
+              ))
+        ])),
+      ),
+    ));
   }
+
+  void loadInterstital() async {
+    bool loaded = await Flutterappodealads.instance
+        .isLoaded(AppodealAdType.AppodealAdTypeInterstitial);
+    if (loaded) {
+      Flutterappodealads.instance.showInterstitial();
+    } else {
+      print("No se ha cargado un Interstitial");
+    }
+  }
+
+  /*void loadRewarded() async {
+    bool loaded = await Flutterappodealads.instance
+        .isLoaded(AppodealAdType.AppodealAdTypeRewardedVideo);
+    if (loaded) {
+      Flutterappodealads.instance.showRewardedVideo();
+    } else {
+      print("No se ha cargado un Rewarded Video");
+    }
+  }*/
 }

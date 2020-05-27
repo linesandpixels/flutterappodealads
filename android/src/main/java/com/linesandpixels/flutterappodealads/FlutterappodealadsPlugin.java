@@ -6,7 +6,6 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 
 import com.appodeal.ads.Appodeal;
-import com.appodeal.ads.RewardedVideoCallbacks;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +22,7 @@ import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /** FlutterappodealadsPlugin */
-public class FlutterappodealadsPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware, RewardedVideoCallbacks {
+public class FlutterappodealadsPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
@@ -148,7 +147,7 @@ public class FlutterappodealadsPlugin implements FlutterPlugin, MethodCallHandle
     return arguments;
   }
 
-  // Appodeal Rewarded Video Callbacks
+  /*// Appodeal Rewarded Video Callbacks
   @Override
   public void onRewardedVideoLoaded(boolean isPrecache) {
     methodChannel.invokeMethod("onRewardedVideoLoaded", argumentsMap());
@@ -187,6 +186,6 @@ public class FlutterappodealadsPlugin implements FlutterPlugin, MethodCallHandle
   @Override
   public void onRewardedVideoExpired() {
     methodChannel.invokeMethod("onRewardedVideoExpired", argumentsMap());
-  }
+  }*/
 
 }
