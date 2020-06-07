@@ -16,6 +16,7 @@ Appodeal Plugin for Flutter.
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
   #Appodeal Pods
+  s.static_framework = true
   s.dependency 'APDAdColonyAdapter', '2.6.4.1'
   s.dependency 'APDAmazonAdsAdapter', '2.6.4.1' 
   s.dependency 'APDAppLovinAdapter', '2.6.4.1' 
