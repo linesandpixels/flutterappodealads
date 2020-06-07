@@ -45,8 +45,8 @@
 <dict>
   <key>NSAllowsArbitraryLoads</key>
   <true/>
-  <key>GADApplicationIdentifier</key>
-<string>YOUR_ADMOB_APP_ID</string>
 </dict>
+<key>GADApplicationIdentifier</key>
+<string>YOUR_ADMOB_APP_ID</string>
 </dict>
 </plist>
