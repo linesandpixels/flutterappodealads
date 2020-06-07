@@ -15,7 +15,30 @@ Appodeal Plugin for Flutter.
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.platform = :ios, '8.0'
+  #Appodeal Pods
+  s.dependency 'APDAdColonyAdapter', '2.6.4.1'
+  s.dependency 'APDAmazonAdsAdapter', '2.6.4.1' 
+  s.dependency 'APDAppLovinAdapter', '2.6.4.1' 
+  s.dependency 'APDAppodealAdExchangeAdapter', '2.6.4.1' 
+  s.dependency 'APDChartboostAdapter', '2.6.4.1' 
+  s.dependency 'APDFacebookAudienceAdapter', '2.6.4.1' 
+  s.dependency 'APDGoogleAdMobAdapter', '2.6.4.1' 
+  s.dependency 'APDInMobiAdapter', '2.6.4.1' 
+  s.dependency 'APDInnerActiveAdapter', '2.6.4.1' 
+  s.dependency 'APDIronSourceAdapter', '2.6.4.1' 
+  s.dependency 'APDMintegralAdapter', '2.6.4.1' 
+  s.dependency 'APDMyTargetAdapter', '2.6.4.1' 
+  s.dependency 'APDOguryAdapter', '2.6.4.1' 
+  s.dependency 'APDOpenXAdapter', '2.6.4.1' 
+  s.dependency 'APDPubnativeAdapter', '2.6.4.1' 
+  s.dependency 'APDSmaatoAdapter', '2.6.4.1' 
+  s.dependency 'APDStartAppAdapter', '2.6.4.1' 
+  s.dependency 'APDTapjoyAdapter', '2.6.4.1' 
+  s.dependency 'APDUnityAdapter', '2.6.4.1' 
+  s.dependency 'APDVungleAdapter', '2.6.4.1' 
+  s.dependency 'APDYandexAdapter', '2.6.4.1'
+
+  s.platform = :ios, '9.0'
 
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
