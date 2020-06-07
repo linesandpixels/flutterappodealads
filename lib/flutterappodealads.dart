@@ -70,8 +70,8 @@ class Flutterappodealads {
       _channel.invokeMethod('initialize', <String, dynamic>{
         'appKey': appKey,
         'types': itypes,
-        'consenttext': consenttext
-        //'consent': consent
+        //'consenttext': consenttext
+        'consent': consent
       });
     } else {
       _channel.invokeMethod('initialize', <String, dynamic>{

@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
       };*/
       // You should use here your APP Key from Appodeal
       await Flutterappodealads.instance
-          .initialize(Platform.isIOS ? 'IOSAPPKEY' : 'ANDROIDAPPKEY', types, false);
+          .initialize(Platform.isIOS ? 'bfd1a95b29d4d5d0f1b9315f8ebd09fad1a4c8a8f745aa5e' : 'ANDROIDAPPKEY', types, false);
     } on PlatformException {}
 
     // If the widget was removed from the tree while the asynchronous platform
