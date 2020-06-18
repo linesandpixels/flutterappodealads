@@ -47,7 +47,7 @@
   <true/>
 </dict>
 	<key>GADApplicationIdentifier</key>
-	<string>YOUR_ADMOB_APP_ID</string>
+	<string>ca-app-pub-4308604347517844~1609964211</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Example needs your location for analytics and advertising purposes</string>
 	<key>NSCalendarsUsageDescription</key>
