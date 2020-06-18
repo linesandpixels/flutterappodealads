@@ -38,5 +38,10 @@ android {
 dependencies {
     // ... other project dependencies
 
-    implementation 'com.appodeal.ads:sdk:2.6.3.+'
+    //implementation 'com.appodeal.ads:sdk:2.6.3.+'
+    implementation 'com.appodeal.ads.sdk:core:2.6.4'
+    implementation 'com.appodeal.ads.sdk.networks:applovin:2.6.4.4'
+    implementation 'com.appodeal.ads.sdk.networks:appodealx:2.6.4.1'
+    implementation 'com.appodeal.ads.sdk.networks:facebook:2.6.4.3'
+    implementation 'com.appodeal.ads.sdk.networks:admob:2.6.4.1'
 }
